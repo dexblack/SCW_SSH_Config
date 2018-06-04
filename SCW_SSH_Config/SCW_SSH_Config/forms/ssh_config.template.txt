@@ -1,0 +1,46 @@
+<tt>Host bitbucket.org</tt><br/>
+<tt>&nbsp;IdentityFile $ssh_root/$ssh_private_key</tt><br/>
+<br/>
+<tt>Host scw_tunnel</tt><br/>
+<tt>&nbsp;User ubuntu</tt><br/>
+<tt>&nbsp;Hostname 54.69.24.13</tt><br/>
+<tt>&nbsp;IdentityFile $ssh_root/$ssh_private_key</tt><br/>
+<tt>&nbsp;AddressFamily inet</tt><br/>
+<tt># scw_prod_cms</tt><br/>
+<tt>&nbsp;LocalForward 127.0.0.1:9023 ec2-54-201-57-179.us-west-2.compute.amazonaws.com:22</tt><br/>
+<tt># scw_test_?</tt><br/>
+<tt># LocalForward 127.0.0.1:9024 :22</tt><br/>
+<br/>
+<tt>Host scw_prod_cms</tt><br/>
+<tt>&nbsp;User ubuntu</tt><br/>
+<tt>&nbsp;Port $port0</tt><br/>
+<tt>&nbsp;Hostname localhost</tt><br/>
+<tt>&nbsp;AddressFamily inet</tt><br/>
+<tt>&nbsp;IdentityFile $ssh_root/$ssh_private_key</tt><br/>
+<br/>
+<tt>#Host scw_test_?</tt><br/>
+<tt># User ubuntu</tt><br/>
+<tt># Port $port1</tt><br/>
+<tt># Hostname localhost</tt><br/>
+<tt># AddressFamily inet</tt><br/>
+<tt># IdentityFile $ssh_root/$ssh_private_key</tt><br/>
+<br/>
+<tt>Host scw_git_cms</tt><br/>
+<tt>&nbsp;Port 22</tt><br/>
+<tt>&nbsp;User ubuntu</tt><br/>
+<tt>&nbsp;Hostname git-cms.securecodewarrior.com</tt><br/>
+<tt>&nbsp;IdentityFile $ssh_root/$ssh_private_key</tt><br/>
+<br/>
+<tt>Host scw_test_cms_1</tt><br/>
+<tt>&nbsp;Port 22</tt><br/>
+<tt>&nbsp;User ubuntu</tt><br/>
+<tt>&nbsp;Hostname ec2-54-200-229-8.us-west-2.compute.amazonaws.com</tt><br/>
+<tt>&nbsp;IdentityFile $ssh_root/$ssh_private_key</tt><br/>
+<br/>
+<br/>
+<tt>Host scw_test_gitlab_1</tt><br/>
+<tt>&nbsp;Port 22</tt><br/>
+<tt>&nbsp;User ubuntu</tt><br/>
+<tt>&nbsp;Hostname ec2-18-237-196-193.us-west-2.compute.amazonaws.com</tt><br/>
+<tt>&nbsp;IdentityFile $ssh_root/$ssh_private_key</tt><br/>
+<br/>

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}.</h2>
+<h3>{{ message }}</h3>
+
+<div class="row">
+	{% with messages = get_flashed_messages(with_categories=true) %}
+	{% if messages %}
+	<ul>
+		{% for message in messages %}
+		<li>{{ message[1] }}</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+	{% endwith %}
+	<form action="" method="post">
+		{{ form.csrf }}
+
+		<div class="input text">
+			{{ form.port.label }} {{ form.port }}
+		</div>
+		<div class="input text">
+			{{form.ssh_root.label}} {{ form.ssh_root }}
+		</div>
+		<div class="input text">
+			{{form.ssh_private_key.label}} {{ form.ssh_private_key}}
+			<p>e.g. <span font="fixed"> id_rsa or scw.rsa</span></p>
+		</div>
+		<div class="input submit">
+			<input type="submit" value="Submit" />
+		</div>
+	</form>
+	{% if form.configuration != "" %}
+	<div style="border:solid">
+    		{{form.configuration | safe}}
+	</div>
+	{% endif %}
+</div>
+
+{% endblock %}
