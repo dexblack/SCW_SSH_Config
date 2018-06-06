@@ -1,7 +1,7 @@
 <tt>Host bitbucket.org</tt><br/>
 <tt>&nbsp;IdentityFile $ssh_root/$ssh_private_key</tt><br/>
 <br/>
-<tt>Host scw_tunnel</tt><br/>
+<tt>Host scw_tunnel_prod_cms</tt><br/>
 <tt>&nbsp;User ubuntu</tt><br/>
 <tt>&nbsp;Hostname 54.69.24.13</tt><br/>
 <tt>&nbsp;IdentityFile $ssh_root/$ssh_private_key</tt><br/>
